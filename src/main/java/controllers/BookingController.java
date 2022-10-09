@@ -42,10 +42,10 @@ public class BookingController implements IController<BookingController>{
 
                 if(!availableVehicles.isEmpty()){
                     Vehicle bookedVehicle = bookSlotsForTheVehicle(availableVehicles.get(0), bookingStartTime, bookingEndTime);
-                    Double costSurgeFactor = ((double)availableVehicles.size()*100 / branchToBook.getVehicles().size()) <= 20
+                    double costSurgeFactor = ((double)availableVehicles.size()*100 / branchToBook.getVehicles().size()) <= 20
                             ? 1.1 : 1;
-                    Double bookingCost = costSurgeFactor * getBookingCost(bookedVehicle, bookingStartTime, bookingEndTime);
-                    return CommandResponse.createResponse(Boolean.TRUE, rentalPrimary, bookingCost.toString());
+                    int bookingCost = (int)(costSurgeFactor * getBookingCost(bookedVehicle, bookingStartTime, bookingEndTime));
+                    return CommandResponse.createResponse(Boolean.TRUE, rentalPrimary, String.valueOf(bookingCost));
                 }
                 throw new InputMismatchException();
             } else {
@@ -65,7 +65,7 @@ public class BookingController implements IController<BookingController>{
         return Boolean.TRUE;
     }
 
-    private Double getBookingCost(Vehicle vehicle, int startTime, int endTime){
+    private int getBookingCost(Vehicle vehicle, int startTime, int endTime){
         return (vehicle.getRate().getCost() * (endTime-startTime));
     }
     private Vehicle bookSlotsForTheVehicle(Vehicle vehicle, int startTime, int endTime){

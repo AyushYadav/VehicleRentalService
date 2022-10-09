@@ -10,7 +10,7 @@ import java.util.HashSet;
 @NoArgsConstructor
 public class VehicleBuilder {
 
-    public Vehicle createVehicle(String vehicleType, String vehicleId, Double rentCost){
+    public Vehicle createVehicle(String vehicleType, String vehicleId, int rentCost){
         return Vehicle.builder()
                 .id(ID.builder().id(vehicleId).build())
                 .rate(Rate.builder().cost(rentCost).build())

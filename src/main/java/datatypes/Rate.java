@@ -6,5 +6,5 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Rate {
-    private double cost;
+    private int cost;
 }

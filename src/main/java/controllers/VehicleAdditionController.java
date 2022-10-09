@@ -80,7 +80,7 @@ public class VehicleAdditionController implements IController<VehicleAdditionCon
         return command[3];
     }
 
-    private Double getRentCost(String[] command){
-        return Double.parseDouble(command[4]);
+    private int getRentCost(String[] command){
+        return Integer.parseInt(command[4]);
     }
 }

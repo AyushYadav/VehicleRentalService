@@ -29,7 +29,7 @@ public class BookingControllerTest {
         String[] command = {"BOOK","B1","CAR","5","7"};
         CommandResponse response = bookingController.execute(command, rentalPrimary);
         Assertions.assertTrue(response.getIsSuccess());
-        Assertions.assertEquals("800.0",response.getResponse());
+        Assertions.assertEquals("800",response.getResponse());
     }
 
     @Test
@@ -46,7 +46,7 @@ public class BookingControllerTest {
         bookingController.execute(command, rentalPrimary);
         CommandResponse response = bookingController.execute(command, rentalPrimary);
         Assertions.assertTrue(response.getIsSuccess());
-        Assertions.assertEquals("1000.0", response.getResponse());
+        Assertions.assertEquals("1000", response.getResponse());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class BookingControllerTest {
         bookingController.execute(command, rentalPrimary);
         CommandResponse response = bookingController.execute(command, rentalPrimary);
         Assertions.assertTrue(response.getIsSuccess());
-        Assertions.assertEquals("2200.0", response.getResponse());
+        Assertions.assertEquals("2200", response.getResponse());
     }
 
     @Test
@@ -80,11 +80,11 @@ public class BookingControllerTest {
                 .branchName("B1")
                 .allowedVehicleTypes(Arrays.asList("VAN", "CAR"))
                 .vehicles(Arrays.asList(
-                        new VehicleBuilder().createVehicle("CAR","C1",500D),
-                        new VehicleBuilder().createVehicle("CAR","C2",400D),
-                        new VehicleBuilder().createVehicle("CAR","C3",600D),
-                        new VehicleBuilder().createVehicle("CAR","C4",700D),
-                        new VehicleBuilder().createVehicle("CAR","C5",1000D)
+                        new VehicleBuilder().createVehicle("CAR","C1",500),
+                        new VehicleBuilder().createVehicle("CAR","C2",400),
+                        new VehicleBuilder().createVehicle("CAR","C3",600),
+                        new VehicleBuilder().createVehicle("CAR","C4",700),
+                        new VehicleBuilder().createVehicle("CAR","C5",1000)
                 ))
                 .build();
     }

@@ -69,11 +69,11 @@ public class InventoryControllerTest {
                 .branchName("B1")
                 .allowedVehicleTypes(Arrays.asList("VAN", "CAR"))
                 .vehicles(Arrays.asList(
-                        new VehicleBuilder().createVehicle("CAR","C1",500D),
-                        new VehicleBuilder().createVehicle("CAR","C2",400D),
-                        new VehicleBuilder().createVehicle("CAR","C3",600D),
-                        new VehicleBuilder().createVehicle("VAN","V1",500D),
-                        new VehicleBuilder().createVehicle("VAN","V2",1000D)
+                        new VehicleBuilder().createVehicle("CAR","C1",500),
+                        new VehicleBuilder().createVehicle("CAR","C2",400),
+                        new VehicleBuilder().createVehicle("CAR","C3",600),
+                        new VehicleBuilder().createVehicle("VAN","V1",500),
+                        new VehicleBuilder().createVehicle("VAN","V2",1000)
                 ))
                 .build();
     }
